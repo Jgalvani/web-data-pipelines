@@ -1,0 +1,37 @@
+portal:
+  name: books_toscrape
+  base_url: "https://books.toscrape.com"
+  description: "Books to Scrape — demo book catalogue"
+
+selectors:
+  catalogue:
+    book_card: "article.product_pod"
+    book_title: "h3 a"
+    book_price: "p.price_color"
+    book_rating: "p.star-rating"
+    book_availability: "p.instock.availability"
+    book_link: "h3 a"
+    next_page: "li.next a"
+  detail:
+    title: "div.product_main h1"
+    price: "p.price_color"
+    availability: "p.instock.availability"
+    rating: "p.star-rating"
+    description: "#product_description ~ p"
+    upc: "table.table-striped tr:nth-child(1) td"
+    product_type: "table.table-striped tr:nth-child(2) td"
+    price_excl_tax: "table.table-striped tr:nth-child(3) td"
+    price_incl_tax: "table.table-striped tr:nth-child(4) td"
+    tax: "table.table-striped tr:nth-child(5) td"
+    num_reviews: "table.table-striped tr:nth-child(7) td"
+    category: "ul.breadcrumb li:nth-child(3) a"
+    image: "#product_gallery img"
+
+pagination:
+  strategy: "next_button"
+  max_pages: 50
+
+rate_limit:
+  requests_per_minute: 20
+  delay_min: 1.0
+  delay_max: 3.0

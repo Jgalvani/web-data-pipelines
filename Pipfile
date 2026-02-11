@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+playwright = "*"
+playwright-stealth = "*"
+pydantic = ">=2.0"
+pydantic-settings = "*"
+pyyaml = "*"
+httpx = "*"
+tenacity = "*"
+apscheduler = ">=3.10,<4"
+structlog = "*"
+python-dotenv = "*"
+rich = "*"
+click = "*"
+sqlalchemy = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-asyncio = "*"
+pytest-playwright = "*"
+ruff = "*"
+
+[requires]
+python_version = "3.13"

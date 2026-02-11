@@ -1,0 +1,19 @@
+services:
+  # One-shot run: collect data and exit
+  run:
+    build: .
+    volumes:
+      - ./output:/app/output
+    env_file:
+      - .env
+    command: ["run", "books_toscrape", "--max-pages", "2"]
+
+  # Long-running scheduler: executes registered cron jobs
+  scheduler:
+    build: .
+    volumes:
+      - ./output:/app/output
+    env_file:
+      - .env
+    command: ["start-scheduler"]
+    restart: unless-stopped

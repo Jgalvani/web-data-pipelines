@@ -1,0 +1,26 @@
+# Template for adding a new portal.
+# Copy this file, rename to <portal_name>.yaml, and fill in the values.
+
+portal:
+  name: my_portal
+  base_url: "https://example.com"
+  description: "Short description of the portal"
+
+selectors:
+  listing:
+    item_card: "CSS selector for each item"
+    item_title: "CSS selector for item title"
+    item_link: "CSS selector for item link"
+    next_page: "CSS selector for next page button"
+  detail:
+    title: "CSS selector for detail title"
+    # Add more selectors as needed
+
+pagination:
+  strategy: "next_button"  # next_button | page_number | infinite_scroll
+  max_pages: 50
+
+rate_limit:
+  requests_per_minute: 10
+  delay_min: 2.0
+  delay_max: 5.0
